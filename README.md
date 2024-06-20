@@ -5,5 +5,5 @@ Sử dụng:
   + pip install requests 
   + pip install aiohttp
 
-- Cách chạy: python trans.py strings.xml en fr vi
+- Cách chạy: python trans.py strings.xml en fr vi (en là language input, [fr, vi] là các ngôn ngữ cần translate)
 - Các file kết quả sẽ ở folder out
