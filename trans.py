@@ -297,8 +297,14 @@ def deserialize_text(text):
 
 # repeat proccess for each of the lang
 async def perform_translate(OUTPUTLANGUAGE):
-    os.makedirs("out/values-{OUTPUTLANGUAGE}".format(OUTPUTLANGUAGE = OUTPUTLANGUAGE))
-    OUTFILE= "out/values-{OUTPUTLANGUAGE}/strings.xml".format(OUTPUTLANGUAGE = OUTPUTLANGUAGE)
+    if OUTPUTLANGUAGE == "zh-CN":
+        directory = "out/values-zh"
+    else:
+        directory = "out/values-{OUTPUTLANGUAGE}".format(OUTPUTLANGUAGE=OUTPUTLANGUAGE)
+
+    os.makedirs(directory)
+    OUTFILE = "{}/strings.xml".format(directory)
+
     # read xml structure
     tree = ET.parse(INFILE)
     root = tree.getroot()
